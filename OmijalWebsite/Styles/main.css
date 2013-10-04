@@ -4,6 +4,10 @@ body {
     margin: 0px;
 }
 
+::selection {
+    text-shadow: 1px 1px 4px #114987;
+}
+
 #main-header > section:first-child {
     background-color: #555555;
     height: 1em;
@@ -47,8 +51,30 @@ body {
 
 .main-wraper {
     max-width: 1000px;
-    min-width: 800px;
     width: 80%;
     margin: 0 auto;
     padding: 5px;
+}
+
+/*---------Main menu------------*/
+#main-menu {
+    list-style: none;
+    display: block;
+    padding:  3px;
+    
+}
+#main-menu > li {
+    display: inline-block;
+    margin-right: 20px;
+}
+#main-menu li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 900;
+    color: #808080;
+    transition: all .4s;
+}
+
+#main-menu li a:hover {
+    color: #114987;
 }
