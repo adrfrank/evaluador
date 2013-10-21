@@ -1,4 +1,10 @@
 <?php
+     error_reporting(32767);
+     ini_set('display_startup_errors', '1')
+     //ini_set('display_errors', '1');
+     //ini_set('html_errors', 'true');
+     //ini_set('output_buffering', 'true'); 
+     //require_once 'Model/Database.php';  
     
 ?>
 
@@ -9,6 +15,7 @@
         <title>Omijal</title>
         <link href="Styles/main.css" media="all" type="text/css" rel="stylesheet" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script src="Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
     </head>
     <body>
         <header id="main-header">
