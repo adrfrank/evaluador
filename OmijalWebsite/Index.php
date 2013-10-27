@@ -1,10 +1,12 @@
 <?php
-     error_reporting(32767);
-     ini_set('display_startup_errors', '1')
-     //ini_set('display_errors', '1');
-     //ini_set('html_errors', 'true');
-     //ini_set('output_buffering', 'true'); 
-     //require_once 'Model/Database.php';  
+     
+    // require_once  'Model/Database.php';
+    //$db = new Database();
+    //$db->query('select * from categorias');
+    //$db->connect();
+    //$arr = $db->getResult();
+    //echo 'numero de registros: '. $arr->num_rows;
+    //$db->close();
     
 ?>
 
@@ -13,18 +15,26 @@
     <head>
         <meta charset="utf-8" />
         <title>Omijal</title>
+        <link href="Resources/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
         <link href="Styles/main.css" media="all" type="text/css" rel="stylesheet" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+        
     </head>
     <body>
         <header id="main-header">
             <section>
             </section>
             <section>
-                <div class="main-wraper">
-                    <h1>Omijal</h1>
+                <div class="float-right">
+                    <a href="login.php">Iniciar sesión</a>
                 </div>
+                <div class="main-wraper">
+                    <img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left">
+                    <h3>Olimpiada de Informática del Estado de Jalisco</h3>
+                    <div class="clearfix" ></div>
+                </div>
+                
             </section>
         </header>
         <menu class="main-wraper">
@@ -32,6 +42,7 @@
                 <li><a href="#TeoriaLogica">Lógica</a></li>
                 <li><a href="#TeoriaC">C</a></li>
                 <li><a href="#TeoriaKarel">Karel</a></li>
+                <li><a href="#Problemario">Problemario</a></li>
             </ul>
         </menu>
         <section id="main-container">

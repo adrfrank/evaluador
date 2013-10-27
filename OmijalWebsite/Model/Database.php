@@ -1,6 +1,4 @@
 <?php
-
-
     class Database {
         public $user = "root";
         public $host ="localhost";
@@ -8,18 +6,9 @@
         public $database ="omijaldb";
         public $connection;
         public $sqlquery="";      
-        private $debug=TRUE;
-        private static $DBObject=NULL;
+        private $debug=FALSE;
 
-        private function __construct() { }
-
-        public static function getInstance() {
-            if ( !self::$DBObject instanceof self) {
-                self::$DBObject = new self();
-            }
-            return self::$DBObject;
-        }
-
+        public function __construct() { }        
 
         public function connect(){
             $this->connection = new mysqli($this->host, $this->user, $this->pass, $this->database);
@@ -29,7 +18,7 @@
         }
 
         public function close(){
-            $this->close();
+            $this->connection->close();
           $this->message("desconectado");
 
         }
