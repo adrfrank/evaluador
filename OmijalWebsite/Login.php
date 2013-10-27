@@ -1,5 +1,14 @@
 <?php
+    require_once 'Model/SessionManager.php' ;
+    require_once 'Model/Users.php';
     
+    if(isset($_POST['txtUser'])&&isset($_POST['txtPass'])){
+        if(UsuariosManager::Autenticate($_POST['txtUser'], $_POST['txtPass'])){
+            header('location:Index.php');
+        }else{
+            $msg="Usuario o contraseña incorrecta";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -14,16 +23,19 @@
     </head>
     <body>
         <header id="main-header">
+            <section></section>
             <section>
-            </section>
-            <section>
+                <div class="float-right">
+                    <?php if( SessionManager::getUser() == NULL) {?>
+                    <a href="login.php">Iniciar sesión</a>
+                    <?php } else echo SessionManager::getUser()->Nombre ?>
+                </div>
 
                 <div class="main-wraper">
                     <img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left">
                     <h3>Olimpiada de Informática del Estado de Jalisco</h3>
-                    <div class="clearfix" ></div>
+                    <div class="clearfix"></div>
                 </div>
-
             </section>
         </header>
         <menu class="main-wraper">
@@ -52,6 +64,12 @@
                                 <a href="#">¿Olvidaste tu contraseña?</a><br />
                                 <a href="#">Regístrate</a><br />
                                 <input type="submit" value="Iniciar sesión" class="btn" />
+                            </div>
+                            <div>
+                                <?php if(isset($msg)){
+                                     echo   "<div>$msg</div>";
+                                 }
+                                ?>
                             </div>
                         </form>
                     </div>

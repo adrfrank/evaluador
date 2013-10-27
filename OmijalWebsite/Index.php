@@ -1,17 +1,11 @@
 <?php
-     
-    // require_once  'Model/Database.php';
-    //$db = new Database();
-    //$db->query('select * from categorias');
-    //$db->connect();
-    //$arr = $db->getResult();
-    //echo 'numero de registros: '. $arr->num_rows;
-    //$db->close();
+    require_once 'Model/SessionManager.php' ;
+    
     
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <title>Omijal</title>
@@ -25,10 +19,11 @@
         <header id="main-header">
             <section>
             </section>
-            <section>
+            <section><?php if( SessionManager::getUser() == NULL) {?>
                 <div class="float-right">
                     <a href="login.php">Iniciar sesión</a>
                 </div>
+                <?php } else echo SessionManager::getUser()->Nombre ?>
                 <div class="main-wraper">
                     <img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left">
                     <h3>Olimpiada de Informática del Estado de Jalisco</h3>

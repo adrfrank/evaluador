@@ -8,15 +8,15 @@ window.page = {
         console.log("init complete");
     },
     bindings: function () {
-        this.$menu.on("click", "a", this.menu_click);
+        $(window).on("hashchange", this.loadFromHash);
     },
-    menu_click: function (e) {//Manejar el click de un link
-        var dir = $(e.target).attr("href").substr(1);
-        $.get("Pages/"+dir+".html", function (data) {
+    loadFromHash: function (e) {
+        page.$menu.find("a").removeClass("on");
+        page.$menu.find("a[href='"+window.location.hash+"']").addClass("on");
+        $.get("Pages/" + window.location.hash.substr(1) + ".html", function (data) {
             console.log(data);
             page.$content.html(data);
         });
-        
     }
 };
 page.init();

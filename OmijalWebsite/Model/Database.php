@@ -33,7 +33,12 @@
         }
 
         public function getResult(){
+            $this->message($this->sqlquery);
              return $this->connection->query($this->sqlquery);
+        }
+
+        public function setParameter($parameter, $value){
+           $this->sqlquery = str_replace($parameter, $value, $this->sqlquery);
         }
 
        
