@@ -25,7 +25,7 @@
                 </div>
                 <?php } else echo SessionManager::getUser()->Nombre ?>
                 <div class="main-wraper">
-                    <img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left">
+                    <a href="/"><img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left"></a>
                     <h3>Olimpiada de Informática del Estado de Jalisco</h3>
                     <div class="clearfix" ></div>
                 </div>

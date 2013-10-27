@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="main-wraper">
-                    <img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left">
+                    <a href="/"><img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left"></a>
                     <h3>Olimpiada de Informática del Estado de Jalisco</h3>
                     <div class="clearfix"></div>
                 </div>
@@ -62,7 +62,7 @@
                             <br />
                             <div class="text-right">
                                 <a href="#">¿Olvidaste tu contraseña?</a><br />
-                                <a href="#">Regístrate</a><br />
+                                <a href="Account/Register.php">Regístrate</a><br />
                                 <input type="submit" value="Iniciar sesión" class="btn" />
                             </div>
                             <div>

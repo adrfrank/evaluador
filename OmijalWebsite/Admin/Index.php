@@ -1,20 +1,24 @@
 <?php
-    require_once '../Model/SessionManager.php';
+    require_once '../Model/SessionManager.php' ;
+    
+    
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <title>Omijal - Login</title>
+        <title>Omijal</title>
         <link href="../Resources/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
         <link href="../Styles/main.css" media="all" type="text/css" rel="stylesheet" />
-        <script src="../Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script src="../Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+
     </head>
     <body>
         <header id="main-header">
-            <section></section>
+            <section>
+            </section>
             <section>
                 <div class="float-right">
                     <?php if( SessionManager::getUser() == NULL) {?>
@@ -27,14 +31,13 @@
                     <h3>Olimpiada de Informática del Estado de Jalisco</h3>
                     <div class="clearfix"></div>
                 </div>
+
             </section>
         </header>
         <menu class="main-wraper">
             <ul id="main-menu">
-                <li><a href="../index.php#TeoriaLogica">Lógica</a></li>
-                <li><a href="../index.php#TeoriaC">C</a></li>
-                <li><a href="../index.php#TeoriaKarel">Karel</a></li>
-                <li><a href="../index.php#Problemario">Problemario</a></li>
+                <li><a href="#Usuarios">Usuarios</a></li>
+                <li><a href="#TeoriaC">C</a></li>
 
             </ul>
         </menu>
@@ -42,9 +45,9 @@
             <section id="slider">
             </section>
             <section id="sub-container">
-
                 <section id="content" class="main-wraper">
-                    
+                    <p>Sección de administración del sistema.</p>
+
                 </section>
             </section>
 
@@ -57,6 +60,7 @@
         <footer>
 
         </footer>
-
+        <!--scripts-->
+        <script src="/Scripts/main.js" type="text/javascript"></script>
     </body>
 </html>
