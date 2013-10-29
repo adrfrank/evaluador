@@ -9,7 +9,7 @@
              $db->query('SELECT IdUsuarios, Nombre, Password, Email FROM usuarios WHERE Nombre = \'@nombre\' and Password = \'@pass\'')     ;
              $db->setParameter('@nombre',$user);
              $db->setParameter('@pass', $pass);
-             $qresult = $db->getResult();             if($qresult->num_rows > 0){
+             $qresult = $db->getResult();             if($qresult && $qresult->num_rows > 0){
                 $user =  new Usuario($qresult->fetch_assoc());
                 SessionManager::setUser($user);
                 return TRUE;

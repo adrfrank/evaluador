@@ -1,16 +1,20 @@
 <?php
     require_once '../Model/SessionManager.php';
+    require_once '../Model/Escuelas.php';
+    $Escuelas = EscuelasManager::getAll();
+    
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <title>Omijal - Login</title>
+        <title>Omijal - Registro</title>
         <link href="../Resources/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
         <link href="../Styles/main.css" media="all" type="text/css" rel="stylesheet" />
         <script src="../Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script src="../Resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </head>
     <body>
         <header id="main-header">
@@ -18,8 +22,10 @@
             <section>
                 <div class="float-right">
                     <?php if( SessionManager::getUser() == NULL) {?>
-                    <a href="login.php">Iniciar sesión</a>
-                    <?php } else echo SessionManager::getUser()->Nombre ?>
+                    <a href="../login.php">Iniciar sesión</a>
+                    <?php } else {echo "Bienvenido <a href=\"../Account\">" . SessionManager::getUser()->Nombre . "</a>" ?>
+                        [<a href="logout.php">Cerror Sesión</a>]
+                    <?php }?>
                 </div>
 
                 <div class="main-wraper">
@@ -42,9 +48,41 @@
             <section id="slider">
             </section>
             <section id="sub-container">
-
                 <section id="content" class="main-wraper">
-                    
+                    <form>
+                        <fieldset>
+                            <legend>Datos de usuario</legend>
+                            <label for="txtUsername">Nombre de usuario:</label>
+                            <input type="text" required name="txtUsername" />
+                            <label for="txtPass">Contraseña: </label>
+                            <input type="password" required id="txtPass" name="txtPassword" />
+                            <label for="txtConfirm">Confirma tu contraseña: </label>
+                            <input type="password" required id="txtConfirm" name="txtConfirm" />
+                             <label for="txtEmail">Correo electrónico:</label>
+                            <input type="text" required name="txtEmail" />
+                        </fieldset>
+                        <fieldset>
+                            <legend>Información del participante</legend>
+                            <label for="txtNombre">Nombre(s):</label>
+                            <input type="text" required name="txtNombre" />
+                            <label for="txtApellidoP">Apellido Paterno:</label>
+                            <input type="text" required name="txtApellidoP" />
+                            <label for="txtApellidoM">Apellido Materno:</label>
+                            <input type="text" required name="txtApellidoM" />
+                        </fieldset>
+                        <fieldset>
+                            <legend>Escuela</legend>
+                            <label for="lstEscuela">Nombre: </label>
+                            <select name="lstEscuela" id="lstEscuela">
+                                <?php 
+                                    foreach($Escuelas as $esc){
+                                        echo "<option val='$esc->IdEscuela'>$esc->Nombre</option>";
+                                    } 
+                                ?>
+                            </select>
+                        </fieldset>
+                        <input type="submit" value="Enviar" />
+                    </form>
                 </section>
             </section>
 

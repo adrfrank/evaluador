@@ -1,5 +1,9 @@
 <?php
-    require_once '../Model/SessionManager.php' ;    
+    require_once '../Model/SessionManager.php' ;  
+    $user = SessionManager::getUser();
+    if($user == NULL)  {
+        header("location: ../");
+    }
     
 ?>
 
@@ -43,9 +47,10 @@
             </section>
             <section id="sub-container">
                 <section id="content" class="main-wraper">
-                    <h2>Información Personal</h2>
+                    <h2><?php echo $user->Nombre; ?></h2>
                     <p>Esta es tu información Personal.</p>
                     <p>Aquí se podrá modifcar la información personal del usuario</p>
+                    <p> <?php echo RolesManager::IsInRole($user,RolesManager::$Admin) ? "Administrador" : "No" ?></p>
                 </section>
             </section>
 

@@ -13,23 +13,25 @@
         <link href="Styles/main.css" media="all" type="text/css" rel="stylesheet" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
-        
+
     </head>
     <body>
         <header id="main-header">
             <section>
             </section>
-            <section><?php if( SessionManager::getUser() == NULL) {?>
+            <section>
                 <div class="float-right">
+                    <?php if( SessionManager::getUser() == NULL) {?>
                     <a href="login.php">Iniciar sesión</a>
+                    <?php } else {echo "Bienvenido <a href=\"Account\">" . SessionManager::getUser()->Nombre . "</a>" ?>
+                        [<a href="Account/logout.php">Cerror Sesión</a>]
+                    <?php }?>
                 </div>
-                <?php } else echo SessionManager::getUser()->Nombre ?>
                 <div class="main-wraper">
                     <a href="/"><img src="Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left"></a>
                     <h3>Olimpiada de Informática del Estado de Jalisco</h3>
-                    <div class="clearfix" ></div>
+                    <div class="clearfix"></div>
                 </div>
-                
             </section>
         </header>
         <menu class="main-wraper">
@@ -58,7 +60,7 @@
             </section>
         </section>
         <footer>
-
+            <?php var_dump($_SERVER["REQUEST_URI"]) ?>
         </footer>
         <!--scripts-->
         <script src="/Scripts/main.js" type="text/javascript"></script>

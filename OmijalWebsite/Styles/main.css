@@ -136,6 +136,11 @@ body {
     text-align: center;
 }
 
+.command-cell{
+    max-width: 3em;
+    min-width: 3em;
+}
+
 
 /*-------------Form Elements-----------------*/
 form input[type='text'], form input[type='password']{

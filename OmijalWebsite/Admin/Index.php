@@ -1,6 +1,6 @@
 <?php
-    require_once '../Model/SessionManager.php' ;
-    
+    //Admin/Index   
+    require_once '../Model/SessionManager.php' ;    
     
 ?>
 
@@ -13,6 +13,7 @@
         <link href="../Styles/main.css" media="all" type="text/css" rel="stylesheet" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="../Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+        <script src="../Resources/bootstrap/js/bootstrap.min.js" type="text/javascript" ></script>
 
     </head>
     <body>
@@ -27,7 +28,7 @@
                 </div>
 
                 <div class="main-wraper">
-                    <img src="../Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left">
+                    <a href="../"><img src="../Resources/Images/OmijalMini.png" alt="Logo de omijal" class="float-left"></a>
                     <h3>Olimpiada de Informática del Estado de Jalisco</h3>
                     <div class="clearfix"></div>
                 </div>
@@ -37,8 +38,7 @@
         <menu class="main-wraper">
             <ul id="main-menu">
                 <li><a href="#Usuarios">Usuarios</a></li>
-                <li><a href="#TeoriaC">C</a></li>
-
+                <li><a href="#Articulos">Artículos</a></li>
             </ul>
         </menu>
         <section id="main-container">
